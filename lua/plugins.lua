@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     end,
 }
 	use 'echasnovski/mini.statusline'
+	use "echasnovski/mini.tabline"
 	use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
