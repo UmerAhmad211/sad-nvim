@@ -10,3 +10,8 @@ vim.opt.number = true
 vim.opt.tabstop = 2       
 vim.opt.shiftwidth = 2    
 vim.opt.expandtab = false  
+
+--yank to sys clipboard
+vim.keymap.set({'n', 'v'}, 'y', '"+y', { noremap = true, silent = true })
+vim.keymap.set('n', 'Y', '"+Y', { noremap = true, silent = true })
+
