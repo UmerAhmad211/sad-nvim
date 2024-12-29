@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = { "lua_ls", "rust_analyzer" ,
-											"clangd" ,"zls" }
+											"clangd" ,"zls"}
 })
 
 local on_attach = (function(_, bufnr)
@@ -50,4 +50,18 @@ require("lspconfig").lua_ls.setup{
 require("lspconfig").gleam.setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
+}
+
+require("lspconfig").ada_ls.setup{
+	cmd = {"/home/umerahmadkhan/.local/bin/ada_language_server"},
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+    ada = {
+        projectFile = "*.gpr",
+        enableDiagnostics = true,
+        defaultCharset = "utf-8",
+        enableIndexing = true,
+    }
+	}
 }
