@@ -27,6 +27,10 @@ return require('packer').startup(function(use)
 }
 	use 'echasnovski/mini.statusline'
 	use "echasnovski/mini.tabline"
+	use "hrsh7th/nvim-cmp"
+	use "hrsh7th/cmp-nvim-lsp"
+	use "L3MON4D3/LuaSnip"
+	use "rafamadriz/friendly-snippets"
 	use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",

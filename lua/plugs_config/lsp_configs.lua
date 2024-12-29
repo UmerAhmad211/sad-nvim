@@ -4,7 +4,50 @@ require("mason-lspconfig").setup({
 											"clangd" ,"zls" }
 })
 
-require("lspconfig").rust_analyzer.setup{}
-require("lspconfig").clangd.setup{}
-require("lspconfig").zls.setup{}
-require("lspconfig").lua_ls.setup{}
+local on_attach = (function(_, bufnr)
+  local opts = { buffer = bufnr, remap = false }
+  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+  vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+end)
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+require("lspconfig").rust_analyzer.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+        ["rust-analyzer"] = {
+            procMacro = {
+                enable = true,
+            },
+            inlayHints = {
+                enable = true,
+            },
+        },
+    },
+}
+
+require("lspconfig").clangd.setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require("lspconfig").zls.setup{
+	on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "zig", "zon" },
+}
+
+require("lspconfig").lua_ls.setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+require("lspconfig").gleam.setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
