@@ -65,3 +65,15 @@ require("lspconfig").ada_ls.setup{
     }
 	}
 }
+
+require("lspconfig").gopls.setup{
+	settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+}
