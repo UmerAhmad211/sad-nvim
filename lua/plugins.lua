@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
    requires = { {'nvim-lua/plenary.nvim'} }
 }
 	use { "ntk148v/habamax.nvim", requires={ "rktjmp/lush.nvim" } }
+	use "ramojus/mellifluous.nvim"
+	use "cpwrs/americano.nvim"
 	use {
      'nvim-treesitter/nvim-treesitter',
       run = function()
@@ -25,16 +27,15 @@ return require('packer').startup(function(use)
          ts_update()
     end,
 }
-	use 'echasnovski/mini.statusline'
+	use "echasnovski/mini.statusline"
 	use "echasnovski/mini.tabline"
 	use "hrsh7th/nvim-cmp"
 	use "hrsh7th/cmp-nvim-lsp"
-	use "L3MON4D3/LuaSnip"
 	use "rafamadriz/friendly-snippets"
 	use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
+	"neovim/nvim-lspconfig",
 }
   if packer_bootstrap then
     require('packer').sync()
