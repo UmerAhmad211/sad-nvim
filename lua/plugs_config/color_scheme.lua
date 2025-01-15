@@ -1,1 +1,1 @@
-vim.cmd [[ colorscheme habamax.nvim ]]
+vim.cmd [[ colorscheme americano ]]
