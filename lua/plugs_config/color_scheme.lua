@@ -1,1 +1,1 @@
-vim.cmd [[ colorscheme americano ]]
+vim.cmd([[ colorscheme gruber-darker ]])
