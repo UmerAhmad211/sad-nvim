@@ -83,3 +83,9 @@ require("lspconfig").pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+require("lspconfig").ocamllsp.setup({
+	cmd = { "ocamllsp" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
