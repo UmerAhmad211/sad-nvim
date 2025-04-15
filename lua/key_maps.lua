@@ -6,11 +6,6 @@ vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.opt.relativenumber = true
 vim.opt.number = true
 
---tabs = 4 spaces
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
-
 --yank to sys clipboard
 vim.keymap.set({ "n", "v" }, "y", '"+y', { noremap = true, silent = true })
 vim.keymap.set("n", "Y", '"+Y', { noremap = true, silent = true })
