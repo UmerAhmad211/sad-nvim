@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "zls" },
+	ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "zls@0.14.0", "bashls" },
 })
 
 local on_attach = function(_, bufnr)
@@ -86,6 +86,11 @@ require("lspconfig").pyright.setup({
 
 require("lspconfig").ocamllsp.setup({
 	cmd = { "ocamllsp" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig").bashls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
