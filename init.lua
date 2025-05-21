@@ -22,7 +22,7 @@ vim.opt.softtabstop = 0
 
 -- c family langs, use 8 spaces tab
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { "*.c", "*.h", "*.cpp", "*.hpp" },
+	pattern = { "*.c", "*.h", "*.cpp", "*.hpp", "*.d" },
 	callback = function()
 		vim.opt.expandtab = false
 		vim.opt.tabstop = 8
@@ -30,3 +30,5 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.opt.softtabstop = 0
 	end,
 })
+
+vim.diagnostic.config({ virtual_text = true })
