@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "zls@0.14.0", "bashls" },
+	ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "zls@0.14.0", "bashls", "ols" },
 })
 
 local on_attach = function(_, bufnr)
