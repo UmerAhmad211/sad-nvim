@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.opt.guicursor = "n-v-i-c:block-Cursor"
+vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25"
 vim.opt.termguicolors = true
 
 -- def 4 spaces tab
