@@ -4,7 +4,6 @@ require("conform").setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
 		sh = { "shfmt" },
 		clangf = { "clang_format" },
-		python = { "ruff" },
 	},
 	format_on_save = {
 		lsp_fallback = true,
