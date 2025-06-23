@@ -14,26 +14,17 @@ local packer_bootstrap = ensure_packer()
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.7",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-	use({ "ntk148v/habamax.nvim", requires = { "rktjmp/lush.nvim" } })
-	use("ramojus/mellifluous.nvim")
-	use("cpwrs/americano.nvim")
-	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
 			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
 			ts_update()
 		end,
 	})
-	use("echasnovski/mini.statusline")
-	use("echasnovski/mini.tabline")
 	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("stevearc/conform.nvim")
 	use("rafamadriz/friendly-snippets")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("echasnovski/mini.tabline")
+	use("stevearc/conform.nvim")
 	use("blazkowolf/gruber-darker.nvim")
 	use({
 		"williamboman/mason.nvim",
